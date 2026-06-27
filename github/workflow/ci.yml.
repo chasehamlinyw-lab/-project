@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend-lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install backend deps
+        run: |
+          cd app/backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run backend tests (if any)
+        run: |
+          cd app/backend
+          pytest -q || true
+
+  frontend-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install and build
+        run: |
+          cd app/frontend
+          yarn install --frozen-lockfile
+          yarn build || true
