@@ -1,0 +1,75 @@
+{
+  "theme": "dark",
+  "archetype": "4 (Swiss & High-Contrast) + Terminal/Dev-Tool Aesthetic",
+  "vibe": "Technical, precise, fast, and high-contrast. Inspired by modern dev tools like Linear. It feels like a high-performance command center, avoiding generic 'SaaS dashboard' fluff.",
+  "colors": {
+    "dark": {
+      "background": "#09090B",
+      "surface": "#121214",
+      "surface_hover": "#18181B",
+      "border": "#27272A",
+      "border_hover": "#3F3F46",
+      "text_primary": "#FAFAFA",
+      "text_secondary": "#A1A1AA",
+      "text_tertiary": "#71717A",
+      "accent_primary": "#F59E0B",
+      "accent_secondary": "#3B82F6",
+      "danger": "#EF4444",
+      "success": "#10B981"
+    },
+    "light": {
+      "background": "#FAFAFA",
+      "surface": "#FFFFFF",
+      "surface_hover": "#F4F4F5",
+      "border": "#E4E4E7",
+      "border_hover": "#D4D4D8",
+      "text_primary": "#09090B",
+      "text_secondary": "#71717A",
+      "text_tertiary": "#A1A1AA",
+      "accent_primary": "#D97706",
+      "accent_secondary": "#2563EB",
+      "danger": "#DC2626",
+      "success": "#059669"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "strategies": {
+      "headings": "Use Outfit with tight tracking (tracking-tight). Avoid massive sizes; H1 should be text-2xl or text-3xl max in the app context to maintain a dense, tool-like feel.",
+      "body": "Use Manrope for extreme legibility at small sizes (text-sm is default for app body).",
+      "labels": "Use JetBrains Mono, uppercase, text-xs, tracking-widest for metadata (e.g., Task IDs like 'TSK-104', priority labels, keyboard shortcuts like '⌘K')."
+    }
+  },
+  "spacing_and_layout": {
+    "general": "Compact and dense. Use p-4 or p-6 for containers. Embrace the 1px grid look.",
+    "navigation": "Collapsible left sidebar (width: 240px expanded, 64px collapsed). Top bar only for search, breadcrumbs, and user profile.",
+    "dashboard": "Bento-style 'Control Room' grid for stats. Strict adherence to F-pattern layout.",
+    "kanban": "Horizontally scrolling container with vertical scrolling lists. Use gap-4 or gap-6 between columns. Columns should have a fixed width (e.g., 320px) or min-width.",
+    "surfaces": "Flat, cardless look where possible. Rely on 1px borders (border-zinc-800) instead of drop shadows in dark mode."
+  },
+  "components": {
+    "buttons": "Flat design. Primary: Amber background, black text. Secondary: Transparent bg, zinc-800 border, white text. No rounded pills; use rounded-md for a sharp, technical look.",
+    "inputs": "Flat, 1px border, bg-transparent. Focus state: ring-1 ring-amber-500. No heavy shadows.",
+    "kanban_card": "Padding 4, 1px border. Must include: Task ID (Mono), Title (Body font), Priority Icon, and Assignee Avatar. On hover: border brightens, slight -translate-y-[1px].",
+    "badges": "Minimalist. border 1px, text-xs, mono font. e.g., 'In Progress' badge has a 4px colored dot + text.",
+    "ai_features": "Use the Amber accent color explicitly for AI-driven actions (e.g., '✨ Break down task') to differentiate from standard actions."
+  },
+  "micro_interactions": {
+    "hover_states": "Subtle background color shifts (e.g., hover:bg-zinc-800/50). Avoid dramatic scale changes.",
+    "active_states": "scale-95 on click.",
+    "loading": "Skeleton loaders using animate-pulse with bg-zinc-800. No spinning loaders for content blocks.",
+    "transitions": "Use short durations (duration-150 or 200) for a 'snappy' and responsive feel."
+  },
+  "assets": {
+    "icons": "Use lucide-react (default for Shadcn) or @phosphor-icons/react for a more polished look. Keep icon size consistent (size-4 or size-5).",
+    "images": {
+      "avatar_1": "https://images.pexels.com/photos/30426363/pexels-photo-30426363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "avatar_2": "https://images.pexels.com/photos/20157010/pexels-photo-20157010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "avatar_3": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGF2YXRhcnxlbnwwfHx8fDE3ODI0OTQzNjd8MA&ixlib=rb-4.1.0&q=85"
+    }
+  }
+}
